@@ -41,8 +41,8 @@ while read -r REPO; do
 
 	# Generate the git-mirzadeh-pro html for the $DIST/$REPO
 	cd "$DIST"
-	git-mirzadeh-pro "$REPO_NAME"
+	stagit "$REPO_NAME"
 	cp $ASSETS .
 done
 
-git-mirzadeh-pro-index `echo "$REPOS" | awk -F':' '{print $1}'` > "$OUT_DIR/index.html"
+stagit-index `echo "$REPOS" | awk -F':' '{print $1}'` > "$OUT_DIR/index.html"
