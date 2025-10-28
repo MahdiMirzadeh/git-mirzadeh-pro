@@ -1,192 +1,261 @@
-* {
-	box-sizing: border-box;
-}
-html {
-	font-family: sans-serif;
-	font-size: 10px;
-}
 body {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	line-height: 1.42857;
-	color: #f8f8f8;
-	background-color: #111;
-	margin: 10px;
+	background-color: #fafafa;
+	color: #333;
+	margin: 0 auto;
+	padding: 1ex;
+	max-width: 100ex;
+	font-family: sans-serif;
+	line-height: 1.6;
 }
-table td {
-	padding: 0 0.4em;
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 1em;
+	margin: 0;
+	line-height: 1.2;
 }
-a {
-	background-color: transparent;
-	color: #8dc;
-	text-decoration: none;
-}
-a:focus, a:hover {
-	color: #8fc;
-	text-decoration: underline;
-}
-h1 {
-	font-size: 2em;
-	margin: .67em 0;
-}
-img {
-	border: 0 none;
+
+img, h1, h2 {
 	vertical-align: middle;
 }
-h1, h2, h3, h4, h5, h6 {
-	font-family: inherit;
-	font-weight: 500;
-	line-height: 1.1;
-	color: inherit;
+
+img {
+	border: 0;
+	max-width: 100%;
+	height: auto;
 }
-h1, h2, h3 {
-	margin-top: 20px;
-	margin-bottom: 10px;
-}
-h4, h5, h6 {
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-h1 {
-	font-size: 36px;
-}
-h2 {
-	font-size: 30px;
-}
-h3 {
-	font-size: 24px;
-}
-h4 {
-	font-size: 18px;
-}
-h5 {
-	font-size: 14px;
-}
-h6 {
-	font-size: 12px;
-}
-p {
-	margin: 0 0 10px;
-}
-.text-justify {
-	text-align: justify;
-}
-ol, ul {
-	margin-top: 0;
-	margin-bottom: 10px;
-}
-.container {
-	padding-right: 15px;
-	padding-left: 15px;
-	margin-right: auto;
-	margin-left: auto;
-}
-@media (min-width: 768px) {
-	.container {
-		width: 750px;
-	}
-}
-@media (min-width: 992px) {
-	.container {
-		width: 970px;
-	}
-}
-@media (min-width: 1200px) {
-	.container {
-		width: 1170px;
-	}
-}
-.nav {
-	padding-left: 0;
-	margin-bottom: 0;
-	list-style: outside none none;
-}
-.nav::after {
-	display: table;
-	content: " ";
-	clear: both;
-}
-.nav > li {
-	position: relative;
-	display: block;
-}
-.nav > li > a {
-	position: relative;
-	display: block;
-	padding: 10px 15px;
-	border-bottom: 1px solid #333;
-}
-.nav > li > a:focus, .nav > li > a:hover {
+
+a {
+	color: #0066cc;
 	text-decoration: none;
-	background-color: #171717;
-	border-bottom: 1px solid #8fc;
 }
-.nav-tabs {
-	border-bottom: 1px solid #333;
+
+a:hover {
+	text-decoration: underline;
+	color: #0052a3;
 }
-.nav-tabs > li {
-	float: left;
-	margin-bottom: -1px;
+
+a:visited {
+	color: #6b46c1;
 }
-.nav-tabs > li > a {
-	margin-right: 2px;
-	line-height: 1.42857;
+
+a:target {
+	background-color: #ffff00;
 }
-.nav-tabs > li.active > a {
-	cursor: default;
-	border-bottom: 1px solid #8dc;
+
+a.d,
+a.h,
+a.i,
+a.line {
+	text-decoration: none;
 }
-.modal-footer {
-	text-align: right;
-	border-top: 1px solid #333;
-	padding: 15px;
+
+#blob a {
+	color: #0066cc;
 }
-#header h1 {
-	font-family: monospace;
-	font-size: 60px;
-	font-weight: 700;
+
+#blob a:hover {
+	color: #0052a3;
+	text-decoration: underline;
 }
-#icecast {
+
+table {
+	border-collapse: collapse;
 	width: 100%;
-	height: 225px;
-	border-width: 0;
+	margin: 1em 0;
+	table-layout: auto;
 }
+
+table thead td {
+	font-weight: bold;
+}
+
+table td, table th {
+	padding: 8px 12px;
+	text-align: center;
+	border: 1px solid #ccc;
+	vertical-align: middle;
+}
+
+table td:empty {
+	background-color: #fafafa;
+	border: none;
+}
+
+#content {
+	overflow-x: auto;
+	max-width: 100%;
+}
+
+#content table td {
+	white-space: normal;
+	word-break: break-word;
+}
+
+#log td:first-child,
+#log td:nth-child(3),
+#log td:nth-child(4),
+#log td:nth-child(5),
+#log td:nth-child(6) {
+	white-space: nowrap;
+}
+
+#branches tr:hover td,
+#tags tr:hover td,
+#index tr:hover td,
+#log tr:hover td,
+#files tr:hover td {
+	background-color: #f9f9f9;
+}
+
+#index tr td:nth-child(2),
+#tags tr td:nth-child(3),
+#branches tr td:nth-child(3),
+#log tr td:nth-child(2) {
+	white-space: normal;
+}
+
+table tr:nth-child(even) {
+	background-color: #f9f9f9;
+}
+
+td.num {
+	text-align: center;
+}
+
+.desc {
+	color: #555;
+}
+
+hr {
+	border: none;
+	border-top: 2px solid #ccc;
+	margin: 2em 0;
+}
+
 pre {
-	display: block;
-	padding: 9.5px;
-	margin: 0px 0px 10px;
-	font-size: 13px;
-	line-height: 1.42857;
-	color: #eee;
-	word-break: break-all;
-	word-wrap: break-word;
-	background-color: #111;
-	border: 1px solid #333;
-}
-code {
-	padding: 2px 4px;
-	font-size: 90%;
-	color: pink;
-	background-color: #111;
-}
-pre code {
-	padding: 0px;
-	font-size: inherit;
-	color: inherit;
-	white-space: pre-wrap;
-	background-color: transparent;
-}
-code, pre {
 	font-family: monospace;
+	background-color: #f0f0f0;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	padding: 1em;
+	margin: 1em 0;
+	font-size: 1em;
+	line-height: 1.5;
+	color: #222;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	overflow-x: visible;
 }
 
-/* print style, remove header and redundant stuff */
-@media print {
-	h1, h2, #header, #footer {
-		display: none;
-	}
-	.container {
-		width: auto !important;
-	}
+pre a.h {
+	color: #0066cc;
 }
 
+.A,
+span.i,
+pre a.i {
+	color: #070;
+}
+
+.D,
+span.d,
+pre a.d {
+	color: #e00;
+}
+
+pre a.h:hover,
+pre a.i:hover,
+pre a.d:hover {
+	text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #1a1a1a;
+		color: #e0e0e0;
+	}
+	
+	hr {
+		border-top-color: #444;
+	}
+	
+	a:link {
+		color: #cdf;
+	}
+	
+	a:hover {
+		color: #def;
+	}
+	
+	a:visited {
+		color: #dcf;
+	}
+	
+	a:target {
+		background-color: #666600;
+		color: #fff;
+	}
+	
+	.desc {
+		color: #aaa;
+	}
+	
+	#blob a {
+		color: #cdf;
+	}
+	
+	#blob a:target {
+		color: #def;
+	}
+	
+	#blob a:hover {
+		color: #def;
+	}
+	
+	pre {
+		background-color: #1e1e1e;
+		border-color: #333;
+		color: #f2f2f2;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+		overflow-x: visible;
+	}
+	
+	pre a.h {
+		color: #9cdcfe;
+	}
+	
+	.A,
+	span.i,
+	pre a.i {
+		color: #6f6;
+	}
+	
+	.D,
+	span.d,
+	pre a.d {
+		color: #f77;
+	}
+	
+	table td, table th {
+		border-color: #444;
+		vertical-align: middle;
+	}
+	
+	table tr:nth-child(even) {
+		background-color: #111;
+	}
+
+	table td:empty {
+		background-color: #1a1a1a;
+		border: none;
+	}
+	
+	#branches tr:hover td,
+	#tags tr:hover td,
+	#index tr:hover td,
+	#log tr:hover td,
+	#files tr:hover td {
+		background-color: #0d0d0d;
+	}
+}
