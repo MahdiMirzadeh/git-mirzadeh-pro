@@ -13,6 +13,9 @@ body {
 	background-color: #111;
 	margin: 10px;
 }
+table td {
+	padding: 0 0.4em;
+}
 a {
 	background-color: transparent;
 	color: #8dc;
