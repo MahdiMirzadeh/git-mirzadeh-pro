@@ -16,6 +16,7 @@ $HOME/Code/stagit/favicon.png
 "
 
 # Copy assets
+[ -d "$OUT_DIR" ] || mkdir -p "$OUT_DIR"
 cd "$OUT_DIR"
 cp $ASSETS .
 
