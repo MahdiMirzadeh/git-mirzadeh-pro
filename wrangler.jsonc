@@ -1,0 +1,15 @@
+{
+  "name": "git-mirzadeh-pro",
+  "compatibility_date": "2025-08-23",
+  "workers_dev": false,
+  "assets": {
+    "directory": "./dist"
+  },
+  "routes": [
+    {
+      "pattern": "git.mirzadeh.pro",
+      "custom_domain": true
+    }
+  ]
+}
+
