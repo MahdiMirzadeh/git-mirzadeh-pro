@@ -74,8 +74,8 @@ writeheader(FILE *fp)
 	fprintf(fp, "<table>\n<tr><td><img src=\"%slogo.png\" alt=\"\" width=\"32\" height=\"32\" /></td>\n"
 	        "<td><span class=\"desc\">", relpath);
 	xmlencode(fp, description, strlen(description));
-	fputs("</span></td></tr><tr><td></td><td>\n"
-		"</td></tr>\n</table>\n<hr/>\n<div id=\"content\">\n"
+	fputs("</span></td></tr>\n"
+		"</table>\n<hr/>\n<div id=\"content\">\n"
 		"<table id=\"index\"><thead>\n"
 		"<tr><td><b>Name</b></td><td><b>Description</b></td><td><b>Owner</b></td>"
 		"<td><b>Last commit</b></td></tr>"
