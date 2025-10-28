@@ -1,18 +1,18 @@
 #!/bin/sh
 
-OUT_DIR="$HOME/Code/stagit/dist/"
+OUT_DIR="$HOME/Code/git-mirzadeh-pro/dist/"
 
 REPOS="
 $HOME/Code/mirzadeh-pro:My personal website
 $HOME/Code/qbittorrent:My qbittorrent themes
 $HOME/Code/excalocal:Local Excalidraw server with custom handwritten font and advanced instance management
-$HOME/Code/stagit:source code for git.mirzadeh.pro
+$HOME/Code/git-mirzadeh-pro:source code for git.mirzadeh.pro
 "
 
 ASSETS="
-$HOME/Code/stagit/style.css
-$HOME/Code/stagit/logo.png
-$HOME/Code/stagit/favicon.png
+$HOME/Code/git-mirzadeh-pro/style.css
+$HOME/Code/git-mirzadeh-pro/logo.png
+$HOME/Code/git-mirzadeh-pro/favicon.png
 "
 
 # Copy assets
@@ -39,10 +39,10 @@ while read -r REPO; do
 	DIST="$OUT_DIR/${REPO_NAME##*/}"
 	[ -d "$DIST" ] || mkdir -p "$DIST"
 
-	# Generate the stagit html for the $DIST/$REPO
+	# Generate the git-mirzadeh-pro html for the $DIST/$REPO
 	cd "$DIST"
-	stagit "$REPO_NAME"
+	git-mirzadeh-pro "$REPO_NAME"
 	cp $ASSETS .
 done
 
-stagit-index `echo "$REPOS" | awk -F':' '{print $1}'` > "$OUT_DIR/index.html"
+git-mirzadeh-pro-index `echo "$REPOS" | awk -F':' '{print $1}'` > "$OUT_DIR/index.html"
