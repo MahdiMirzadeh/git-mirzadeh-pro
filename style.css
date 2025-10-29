@@ -10,7 +10,33 @@ body {
 
 h1, h2, h3, h4, h5, h6, h7 {
 	line-height: 1.2;
-	vertical-align: middle;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+}
+.heading-with-anchor {
+	position: relative;
+}
+.heading-anchor {
+	position: absolute;
+	left: -1.5em;
+	top: 50%;
+	transform: translateY(-50%);
+	text-decoration: none;
+	opacity: 0;
+	padding-right: 0.5em;
+	transition: opacity 0.2s ease;
+	display: inline-flex;
+	align-items: center;
+}
+.heading-anchor .octicon {
+	fill: #ccc;
+	display: block;
+}
+.heading-with-anchor:hover .heading-anchor {
+	opacity: 1;
+}
+.heading-anchor:hover .octicon {
+	fill: #0066cc;
 }
 
 img {
@@ -59,24 +85,19 @@ table {
 	border-collapse: collapse;
 	width: 100%;
 	margin: 1em 0;
-	table-layout: auto;
+	table-layout: fixed;
 }
-
-table thead td {
-	font-weight: bold;
-}
-
 table td, table th {
 	border: 1px solid #ccc;
 	padding: 8px 12px;
 	text-align: center;
-	vertical-align: middle;
+	vertical-align: center;
 }
 
-table td:empty {
-	background-color: #fafafa;
-	border: none;
+table tr:nth-child(even) {
+	background-color: #f9f9f9;
 }
+
 
 #content {
 	overflow-x: auto;
