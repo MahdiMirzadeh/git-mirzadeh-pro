@@ -448,6 +448,7 @@ writeheader(FILE *fp, const char *title)
 	fputs("<!DOCTYPE html>\n"
 		"<html>\n<head>\n"
 		"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n"
+		"<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n"
 		"<title>", fp);
 	xmlencode(fp, title, strlen(title));
 	if (title[0] && strippedname[0])
@@ -465,19 +466,21 @@ writeheader(FILE *fp, const char *title)
 	fputs("</head>\n<body>\n<table><tr><td>", fp);
 	fprintf(fp, "<a href=\"../%s\"><img src=\"%slogo.png\" alt=\"\" width=\"32\" height=\"32\" /></a>",
 	        relpath, relpath);
-	fputs("</td><td><h1>", fp);
+	fputs("<span class=\"desc\">Repositories</span>", fp);
+	fputs("</td></tr></table>", fp);
+	fputs("<table><tr><td><h1>", fp);
 	xmlencode(fp, strippedname, strlen(strippedname));
 	fputs("</h1><span class=\"desc\">", fp);
 	xmlencode(fp, description, strlen(description));
 	fputs("</span></td></tr>", fp);
 	if (cloneurl[0]) {
-		fputs("<tr class=\"url\"><td></td><td>git clone <a href=\"", fp);
+		fputs("<tr class=\"url\"><td>git clone <a href=\"", fp);
 		xmlencode(fp, cloneurl, strlen(cloneurl));
 		fputs("\">", fp);
 		xmlencode(fp, cloneurl, strlen(cloneurl));
 		fputs("</a></td></tr>", fp);
 	}
-	fputs("<tr><td></td><td>\n", fp);
+	fputs("<tr><td>\n", fp);
 	fprintf(fp, "<a href=\"%slog.html\">Log</a> | ", relpath);
 	fprintf(fp, "<a href=\"%sfiles.html\">Files</a> | ", relpath);
 	fprintf(fp, "<a href=\"%srefs.html\">Refs</a>", relpath);
