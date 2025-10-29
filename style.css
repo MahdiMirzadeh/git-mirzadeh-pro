@@ -8,20 +8,17 @@ body {
 	line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-size: 1em;
-	margin: 0;
+h1, h2, h3, h4, h5, h6, h7 {
 	line-height: 1.2;
-}
-
-img, h1, h2 {
 	vertical-align: middle;
 }
 
 img {
-	border: 0;
+	display: block;
+	margin: 0 auto;
 	max-width: 100%;
 	height: auto;
+	padding: 1ex;
 }
 
 a {
@@ -70,9 +67,9 @@ table thead td {
 }
 
 table td, table th {
+	border: 1px solid #ccc;
 	padding: 8px 12px;
 	text-align: center;
-	border: 1px solid #ccc;
 	vertical-align: middle;
 }
 
@@ -84,9 +81,6 @@ table td:empty {
 #content {
 	overflow-x: auto;
 	max-width: 100%;
-}
-
-#content table td {
 	white-space: normal;
 	word-break: break-word;
 }
@@ -216,9 +210,6 @@ pre a.d:hover {
 		background-color: #1e1e1e;
 		border-color: #333;
 		color: #f2f2f2;
-		white-space: pre-wrap;
-		word-wrap: break-word;
-		overflow-x: visible;
 	}
 	
 	pre a.h {
@@ -239,7 +230,6 @@ pre a.d:hover {
 	
 	table td, table th {
 		border-color: #444;
-		vertical-align: middle;
 	}
 	
 	table tr:nth-child(even) {
@@ -259,3 +249,65 @@ pre a.d:hover {
 		background-color: #0d0d0d;
 	}
 }
+
+@media (max-width: 480px) {
+	#log td:nth-child(1),
+	#log th:nth-child(1) {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	body {
+		padding: 1em;
+		max-width: 100%;
+		font-size: 1.05em;
+		line-height: 1.7;
+	}
+
+	h1, h2, h3, h4, h5, h6, h7 {
+		line-height: 1.2;
+		vertical-align: middle;
+	}
+
+	table {
+		font-size: 1em;
+	}
+
+	/* #index table: show only Name & Description */
+	#index td:nth-child(3),
+	#index th:nth-child(3),
+	#index td:nth-child(4),
+	#index th:nth-child(4) {
+		display: none;
+	}
+
+	/* #log table: show only Date, Commit message, +, - */
+	#log td:first-child {
+		min-width: 40px;
+		white-space: normal;
+	}
+	#log td:nth-child(3),
+	#log th:nth-child(3),
+	#log td:nth-child(4),
+	#log th:nth-child(4) {
+		display: none;
+	}
+
+	pre {
+		font-size: 0.9em;
+		padding: 0.75em;
+		word-wrap: break-word;
+		border-radius: 4px;
+		overflow-x: auto;
+	}
+
+	td, th {
+		padding: 0.6em;
+	}
+
+	tr {
+		display: table-row;
+	}
+}
+
