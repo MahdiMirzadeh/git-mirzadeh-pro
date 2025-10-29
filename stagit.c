@@ -463,11 +463,9 @@ writeheader(FILE *fp, const char *title)
 	fprintf(fp, "<link rel=\"alternate\" type=\"application/atom+xml\" title=\"%s Atom Feed (tags)\" href=\"%stags.xml\" />\n",
 		name, relpath);
 	fprintf(fp, "<link rel=\"stylesheet\" type=\"text/css\" href=\"%sstyle.css\" />\n", relpath);
-	fputs("</head>\n<body>\n<table><tr><td>", fp);
-	fprintf(fp, "<a href=\"../%s\"><img src=\"%slogo.png\" alt=\"\" width=\"32\" height=\"32\" /></a>",
-	        relpath, relpath);
-	fputs("<span class=\"desc\">Repositories</span>", fp);
-	fputs("</td></tr></table>", fp);
+	fputs("</head>\n<body>\n", fp);
+	fputs("<h1 id=\"p-style-text-align-center-mahdi-mirzadeh-p\" class=\"heading-with-anchor\"><p style=\"text-align: center\"> <a href=\"/\">Mahdi Mirzadeh</a> </p><a href=\"#p-style-text-align-center-mahdi-mirzadeh-p\" class=\"heading-anchor\" aria-label=\"Permalink\"><svg class=\"octicon\" viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path d=\"m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z\"></path></svg></a></h1>", fp);
+	fputs("<table><tbody><tr><td><p style=\"text-align: center;\"><a href=\"https://mirzadeh.pro/\">Home</a></p></td><td><p style=\"text-align: center;\"><a href=\"https://mirzadeh.pro/about.html\">About</a></p></td><td><p style=\"text-align: center;\"><a href=\"https://mirzadeh.pro/donate.html\">Donate</a></p></td><td><p style=\"text-align: center;\"><a href=\"https://mirzadeh.pro/contact.html\">Contact</a></p></td><td><p style=\"text-align: center;\"><a href=\"/\">Git</a></p></td></tr></tbody></table>", fp);
 	fputs("<table><tr><td><h1>", fp);
 	xmlencode(fp, strippedname, strlen(strippedname));
 	fputs("</h1><span class=\"desc\">", fp);
