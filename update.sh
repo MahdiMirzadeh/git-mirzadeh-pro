@@ -57,8 +57,8 @@ while read -r REPO; do
 	cd "$DIST"
 	stagit "$REPO_NAME"
 	cp $ASSETS .
+
+	cp "log.html" "index.html"
 done
 
 stagit-index `echo "$REPOS" | awk -F':' '{print $1}' | sort` > "$OUT_DIR/index.html"
-
-#proxychains -q wrangler deploy
