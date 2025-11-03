@@ -1,6 +1,7 @@
 {
   "name": "git-mirzadeh-pro",
   "compatibility_date": "2025-08-23",
+  "main": ".worker.js",
   "workers_dev": false,
   "assets": {
     "directory": "./dist"
